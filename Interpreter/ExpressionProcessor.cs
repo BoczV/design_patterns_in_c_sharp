@@ -1,100 +1,74 @@
 ﻿
+using System.Reflection.Emit;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Interpreter;
 
 public class ExpressionProcessor
 {
-    private Dictionary<string, int> _variables = new();
+    private readonly Dictionary<string, double> _variables = new();
 
-    private List<char> expressions = new() {
-        '+', '-'
+    private readonly List<char> expressionTypes = new() {
+        '+', '-', '*', '/',
     };
 
-    private enum OperationTypes
-    {
-        Addition, Substraction
-    }
-
-    private OperationTypes? actualOperation = null!;
+    private readonly List<Expression> expressions = new();
 
     public void AddNewVariable(string variable, int value)
     {
         _variables.Add(variable, value);
     }
 
-    public int Calculate(string expression)
+    public void GetOneExpression(string expressionString)
     {
-        var result = int.Parse(expression[0].ToString());
-        for (int j = 1; j < expression.Length; j++)
+        string newExpressionString = expressionString.Replace(",", ".");
+        for(int i = 0; i < newExpressionString.Length; i++)
         {
-            char element = expression[j];
-            if (char.IsDigit(element))
+            char expressionChar = newExpressionString[i];
+            if (expressionTypes.Contains(expressionChar)) 
             {
-                (int actualValue, int increasedIndex) = ConcatenateNumberHigherThanNine(expression, expression.IndexOf(element));
-                j = increasedIndex;
-                if (actualOperation != null)
-                {
-                    switch (actualOperation)
-                    {
-                        case OperationTypes.Addition:
-                            result += actualValue;
-                            break;
-                        case OperationTypes.Substraction:
-                            result -= actualValue;
-                            break;
-                    }
-                    actualOperation = null;
-                }
-            }
-            else if (expressions.Contains(element))
-            {
-                switch (element)
-                {
-                    case '+':
-                        actualOperation = OperationTypes.Addition;
-                        break;
-                    case '-':
-                        actualOperation = OperationTypes.Substraction;
-                        break;
-                }
-            }
-            else
-            {
-                actualOperation = null;
-                if (_variables.ContainsKey(element.ToString()))
-                {
-                    result += _variables[element.ToString()];
-                }
-                else
-                {
-                    return 0;
-                }
+                string firstNumberStr = newExpressionString[..i];
+
+                double helperFirstNumber = GetNumericValue(firstNumberStr);
+                
+                string secondNumberStr = newExpressionString.Substring(i+1);
+
+                double helperSecondNumber = GetNumericValue(secondNumberStr);
+
+                OperationType operationType =
+                    expressionChar == '+' ? OperationType.Addition :
+                    expressionChar == '-' ? OperationType.Subtraction :
+                    expressionChar == '*' ? OperationType.Multiplication : OperationType.Division;
+
+                expressions.Add(new Expression(helperFirstNumber, helperSecondNumber, operationType));
             }
         }
-        return result;
     }
 
-    private static (int value, int charNumber) ConcatenateNumberHigherThanNine(string expression, int index)
+    private double GetNumericValue(string stringValue)
     {
-        var sb = new StringBuilder();
-        var increasedIndex = 0;
-        bool changedIncreasedIndex = false;
-        for (int i = index; i < expression.Length; i++)
+        double getNumber;
+        if (Double.TryParse(stringValue, out getNumber))
         {
-            char element = expression[i];
-            if (char.IsDigit(element))
-            {
-                sb.Append(element);
-            }
-            else
-            {
-                increasedIndex = i - 1;
-                changedIncreasedIndex = true;
-                break;
-            }
+            return getNumber;
         }
-        string sbString = sb.ToString();
-        return (int.Parse(sbString), changedIncreasedIndex ? increasedIndex : expression.Length - 1);
+        else
+        {
+            if (_variables.ContainsKey(stringValue))
+            {
+                return _variables[stringValue];
+            }
+            throw new InvalidOperationException();
+        }
+    }
+
+    public double Calculate()
+    {
+        double result = 0;
+
+        expressions.ForEach(expression => result += expression.Process());
+
+        return result;
     }
 }
