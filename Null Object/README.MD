@@ -1,5 +1,5 @@
-﻿#Null Object design pattern
+﻿# Null Object design pattern
 
-##Concept
+## Concept
 
 A no-op object that conforms to the required interface, satisfying a dependency requirement of some other object.
