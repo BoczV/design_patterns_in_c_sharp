@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational", "Creational", "{E15B8975-E5C6-45C6-AF85-0A6A75737908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "State\State.csproj", "{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2BFFA303-413E-4498-AE4E-CA75A905E128}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BFFA303-413E-4498-AE4E-CA75A905E128}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BFFA303-413E-4498-AE4E-CA75A905E128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{79FDE827-6A6F-4361-93EB-1477FA9388F0} = {42E6D81F-B730-464D-AD7F-EDBF108A9003}
 		{BDA98FDE-64C3-43C8-9AE7-D5F01FFBFAB8} = {E15B8975-E5C6-45C6-AF85-0A6A75737908}
 		{2BFFA303-413E-4498-AE4E-CA75A905E128} = {B6BCAF4A-816C-43D3-9847-D738D3872E2D}
+		{EA01BB33-BA2F-469B-AEF8-E2B52C6EC93E} = {42E6D81F-B730-464D-AD7F-EDBF108A9003}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4E38765-5CF0-45B9-A6CC-E25382865344}
