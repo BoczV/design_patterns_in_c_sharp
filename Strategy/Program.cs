@@ -9,7 +9,7 @@ public static class Program
     {
         var discriminantStrategy = new OrdinaryDiscriminantStrategy();
         var quadraticEquationSolver = new QuadraticEquationSolver(discriminantStrategy);
-        var result = quadraticEquationSolver.Solve(-3, -4, 7);
+        var result = quadraticEquationSolver.Solve(-2, -1, -3);
         Console.WriteLine($"First solution: {result.Item1.Real}, second solution: {result.Item2.Real}");
     }
 }
