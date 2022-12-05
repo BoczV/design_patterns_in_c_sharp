@@ -20,6 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Chain.Of.Responsibility\Chain.Of.Responsibility.csproj" />
     <ProjectReference Include="..\Command\Command.csproj" />
+    <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
+    <ProjectReference Include="..\Iterator\Iterator.csproj" />
   </ItemGroup>
 
 </Project>
