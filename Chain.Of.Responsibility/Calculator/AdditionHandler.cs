@@ -10,8 +10,6 @@ public class AdditionHandler : Handler
     {
     }
 
-
-
     public override double Handle(OperationType operationType, double number1, double number2)
     {
         if (operationType == OperationType.Addition)

@@ -2,7 +2,7 @@
 
 namespace Iterator;
 
-public class LinkedList<T>
+public class MyLinkedList<T>
 {
     private Node? root;
     private sealed class Node
