@@ -4,7 +4,7 @@ public static class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList<int>();
+        var linkedList = new MyLinkedList<int>();
 
         linkedList.Add(2);
         linkedList.Add(23);
