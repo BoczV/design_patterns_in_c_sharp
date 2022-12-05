@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace Behavioral.UnitTests;
 
+[TestFixture]
 public class ChainOfResponsibilityUnitTests
 {
     private ChainCalculator _chainCalculator;
