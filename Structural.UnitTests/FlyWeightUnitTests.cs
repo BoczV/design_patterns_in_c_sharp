@@ -13,10 +13,6 @@ namespace Structural.UnitTests;
 [TestFixture]
 public class FlyweightUnitTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
 
     [Test]
     public void TestCapitalizationOfFirstWord()
