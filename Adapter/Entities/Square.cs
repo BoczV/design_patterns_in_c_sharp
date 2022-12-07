@@ -1,6 +1,6 @@
 ﻿namespace Adapter.Entities;
 
-public class Square: IRectangle
+public class Square : IRectangle
 {
     private int _width;
 
