@@ -30,6 +30,20 @@ public class Account
         }
     }
 
+    public void Withdraw(int number)
+    {
+        balance -= number;
+        var result = $"Withdraw: {number}, balance now: {balance}";
+        if (balance <= 0)
+        {
+            WarnUserAboutBalance();
+        }
+        else
+        {
+            Log.LogInfo(result);
+        }
+    }
+
     private void WarnUserAboutBalance()
     {
         var warning = $"Your balance actual balance is smaller than or equals to 0. Balance: {balance}";
