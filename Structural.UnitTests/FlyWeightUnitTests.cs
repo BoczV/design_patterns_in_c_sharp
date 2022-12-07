@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Structural.UnitTests;
 
 [TestFixture]
-public class FlyWeightUnitTests
+public class FlyweightUnitTests
 {
     [SetUp]
     public void Setup()
