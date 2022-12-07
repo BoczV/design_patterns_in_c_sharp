@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Adapter\Adapter.csproj" />
     <ProjectReference Include="..\Bridge\Bridge.csproj" />
+    <ProjectReference Include="..\Facade\Facade.csproj" />
     <ProjectReference Include="..\Flyweight\Flyweight.csproj" />
   </ItemGroup>
 
