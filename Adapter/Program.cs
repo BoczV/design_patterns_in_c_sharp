@@ -1,15 +1,18 @@
-﻿namespace Adapter;
+﻿using Adapter.Entities;
+
+namespace Adapter;
 
 public static class Program
 {
     static void Main()
     {
-        Square square = new Square();
-        square.Side = 3;
+        var rectangle = new Rectangle(10, 2);
 
-        SquareToRectangleAdapter squareToRectangleAdapter = new SquareToRectangleAdapter(square);
+        var squareToRectangleAdapter = new RectangleToSquareAdapter(rectangle);
 
-        int area = squareToRectangleAdapter.Area();
+        var square = squareToRectangleAdapter.Square;
+
+        int area = square.Area();
         Console.WriteLine(area);
     }
 }
