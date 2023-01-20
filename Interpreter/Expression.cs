@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Interpreter;
+﻿namespace Interpreter;
 
 public class Expression
 {
     private readonly double _leftHandSide;
     private readonly double _rightHandSide;
-    
+
     private readonly OperationType _operationTypeoperationType;
 
     public Expression(double leftHandSide, double rightHandSide, OperationType operationTypeoperationType)

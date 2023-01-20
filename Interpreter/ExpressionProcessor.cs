@@ -1,9 +1,4 @@
-﻿
-using System.Reflection.Emit;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Interpreter;
+﻿namespace Interpreter;
 
 public class ExpressionProcessor
 {
@@ -23,16 +18,16 @@ public class ExpressionProcessor
     public void GetOneExpression(string expressionString)
     {
         string newExpressionString = expressionString.Replace(",", ".");
-        for(int i = 0; i < newExpressionString.Length; i++)
+        for (int i = 0; i < newExpressionString.Length; i++)
         {
             char expressionChar = newExpressionString[i];
-            if (expressionTypes.Contains(expressionChar)) 
+            if (expressionTypes.Contains(expressionChar))
             {
                 string firstNumberStr = newExpressionString[..i];
 
                 double helperFirstNumber = GetNumericValue(firstNumberStr);
-                
-                string secondNumberStr = newExpressionString.Substring(i+1);
+
+                string secondNumberStr = newExpressionString.Substring(i + 1);
 
                 double helperSecondNumber = GetNumericValue(secondNumberStr);
 

@@ -1,4 +1,4 @@
-﻿namespace Adapter;
+﻿namespace Adapter.Entities;
 
 public interface IRectangle
 {

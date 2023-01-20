@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace State;
 
@@ -11,22 +7,22 @@ public class CombinationLock
     private string? _code;
     private string? _status;
 
-    public string Status { get => _status?? "LOCKED"; }
+    public string Status { get => _status ?? "LOCKED"; }
 
     public CombinationLock(int[] combination) => SetNewCombination(combination);
 
     public void EnterDigit(int digit)
     {
-        if(_status == "LOCKED")
+        if (_status == "LOCKED")
         {
             _status = "";
         }
         _status += digit;
-        if(_status == _code)
+        if (_status == _code)
         {
             _status = "OPEN";
         }
-        if(_status.Length == _code.Length)
+        if (_status.Length == _code.Length)
         {
             _status = "ERROR";
         }
