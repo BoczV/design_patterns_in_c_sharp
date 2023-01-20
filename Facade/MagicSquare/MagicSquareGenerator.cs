@@ -13,7 +13,7 @@ public static class MagicSquareGenerator
             list = new();
             for (int i = 0; i < size; i++)
             {
-                list.Add(Generator.Generate(size, size));
+                list.Add(Generator.Generate(size, 3));
             }
             List<List<int>> splittedList = Splitter.Split(list);
 

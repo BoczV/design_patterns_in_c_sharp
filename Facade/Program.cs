@@ -7,10 +7,10 @@ public static class Program
 {
     static void Main()
     {
-        List<List<int>> magicSquare = MagicSquareGenerator.Generate(4);
+        List<List<int>> magicSquare = MagicSquareGenerator.Generate(5);
         for (int i = 0; i < magicSquare.Count; i++)
         {
-            Console.WriteLine("--------");
+            Console.WriteLine("----------");
             var subList = magicSquare[i];
             var strBuilder = new StringBuilder('|');
             for (int j = 0; j < subList.Count; j++)
@@ -19,6 +19,6 @@ public static class Program
             }
             Console.WriteLine(strBuilder);
         }
-        Console.WriteLine("--------");
+        Console.WriteLine("----------");
     }
 }
