@@ -18,11 +18,14 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Create SonarScanner report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp"
-          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-          /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+              /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+              /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
           dotnet build --no-incremental
           dotnet-coverage collect 'dotnet test' -f xml  -o 'coverage.xml'
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
