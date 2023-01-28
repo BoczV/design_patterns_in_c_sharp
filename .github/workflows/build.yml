@@ -43,6 +43,7 @@ jobs:
         shell: powershell
         run: |
           dotnet tool install --global coverlet.console
+          dotnet tool install --global dotnet-sonarscanner
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build --no-incremental
