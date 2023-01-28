@@ -42,7 +42,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          dotnet tool install --global coverlet.console
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp"
               /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
               /d:sonar.cs.opencover.reportsPaths=coverage.xml
