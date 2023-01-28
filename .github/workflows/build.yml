@@ -42,7 +42,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          sh ./sonarqube-9.8.0.63668/bin/linux-x86/sonar.sh start
+          sh ./sonarqube-9.8.0.63668/bin/linux-x86-64/sonar.sh start
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.cs.opencover.reportsPaths=coverage.xml
