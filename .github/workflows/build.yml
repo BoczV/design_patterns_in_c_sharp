@@ -46,9 +46,5 @@ jobs:
             /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
             /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build --no-incremental
-          coverlet .\CovExample.Tests\bin\Debug\net6.0\CovExample.Tests.dll
-            --target "dotnet"
-            --targetargs "test --no-build"
-            -f=opencover 
-            -o="coverage.xml"
+          coverlet .\CovExample.Tests\bin\Debug\net6.0\CovExample.Tests.dll --target "dotnet" --targetargs "test --no-build" -f=opencover -o="coverage.xml"
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
