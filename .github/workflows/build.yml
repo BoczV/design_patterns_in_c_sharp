@@ -44,6 +44,7 @@ jobs:
         run: |
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-sonarscanner
+          .\sonarqube-9.8.0.63668\sonarqube-9.8.0.63668\bin\windows-x86-64\StartSonar
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build --no-incremental
           coverlet .\Creational.UnitTests\bin\Debug\net6.0\Creational.UnitTests.dll --target "dotnet" --targetargs "test --no-build" -f=opencover -o="coverage.xml"
