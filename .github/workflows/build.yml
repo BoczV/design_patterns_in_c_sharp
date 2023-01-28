@@ -45,5 +45,5 @@ jobs:
           dotnet tool install --global coverlet.console
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build --no-incremental
-          coverlet .\CovExample.Tests\bin\Debug\net6.0\CovExample.Tests.dll --target "dotnet" --targetargs "test --no-build" -f=opencover -o="coverage.xml"
+          coverlet ".\TestResults\0ab15f98-cb13-43e2-bc24-2d472acebe3f" --target "dotnet" --targetargs "test --no-build" -f=opencover -o="coverage.xml"
           dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
