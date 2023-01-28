@@ -41,6 +41,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
+          wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /k:"BoczV_design_patterns_in_c_sharp" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.cs.opencover.reportsPaths=coverage.xml
