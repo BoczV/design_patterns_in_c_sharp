@@ -1,0 +1,11 @@
+<SonarQubeAnalysisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SonarQubeHostUrl>https://sonarcloud.io</SonarQubeHostUrl>
+  <ProjectKey>BoczV_design_patterns_in_c_sharp</ProjectKey>
+  <ProjectName>design_patterns_in_c_sharp</ProjectName>
+  <ProjectVersion>1.0</ProjectVersion>
+  <Organization>boczv</Organization>
+  <AdditionalSettings>
+    <Property Name="sonar.exclusions">**/*.bin,**/*.obj,**/*.dll,**/*.Program.cs</Property>
+    <Property Name="sonar.test.inclusions">**/*.Tests.cs</Property>
+  </AdditionalSettings>
+</SonarQubeAnalysisConfig>
