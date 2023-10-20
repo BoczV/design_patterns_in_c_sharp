@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace State;
 
@@ -22,7 +22,7 @@ public class CombinationLock
         {
             _status = "OPEN";
         }
-        if (_status.Length == _code.Length)
+        if (_status.Length == _code?.Length)
         {
             _status = "ERROR";
         }

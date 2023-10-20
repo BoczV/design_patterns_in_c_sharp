@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace Iterator;
 
@@ -83,20 +83,20 @@ public class MyLinkedList<T>
 
     public T First()
     {
-        return root.Value ?? throw new IndexOutOfRangeException();
+        return root!.Value ?? throw new IndexOutOfRangeException();
     }
 
     private Node LastNode()
     {
         var current = root;
 
-        Node previous = current;
+        var previous = current;
         while (current is not null)
         {
             previous = current;
             current = current.Next;
         }
-        return previous;
+        return previous!;
     }
 
     public int Length()
