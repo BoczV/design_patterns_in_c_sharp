@@ -82,7 +82,7 @@ public class BankAccount
         if (history.ContainsKey(guid))
         {
             Memento? memento = history.GetValueOrDefault(guid);
-            if (memento != null)
+            if (memento is not null)
             {
                 _balance = memento.Balance;
                 _accountType = memento.AccountType;
