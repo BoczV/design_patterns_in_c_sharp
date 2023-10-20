@@ -15,7 +15,7 @@ public class CombinationLock
     {
         if (_status == "LOCKED")
         {
-            _status = "";
+            _status = string.Empty;
         }
         _status += digit;
         if (_status == _code)

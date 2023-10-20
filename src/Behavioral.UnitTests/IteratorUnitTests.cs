@@ -1,4 +1,4 @@
-﻿using Iterator;
+using Iterator;
 namespace Behavioral.UnitTests;
 
 [TestFixture]
@@ -26,7 +26,8 @@ public class IteratorUnitTests
         _iterator.Add(secondString);
 
         // Assert
-        _iterator.ToString().Should().Be(stringResult);
+        var result = _iterator.ToString();
+        result.Should().Be(stringResult);
     }
 
     [Test]

@@ -1,4 +1,4 @@
-﻿namespace Command.Commands;
+namespace Command.Commands;
 
 public class BankAccountCommand : ICommand
 {
@@ -34,7 +34,7 @@ public class BankAccountCommand : ICommand
                 _success = BankAccount.Withdraw(Amount);
                 break;
             default:
-                throw new ArgumentException();
+                throw new ArgumentException($"Unknown action type: {Action}");
         }
     }
 }

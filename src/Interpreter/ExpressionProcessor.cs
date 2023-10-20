@@ -1,4 +1,4 @@
-﻿namespace Interpreter;
+namespace Interpreter;
 
 public class ExpressionProcessor
 {
@@ -18,25 +18,27 @@ public class ExpressionProcessor
     public void GetOneExpression(string expressionString)
     {
         string newExpressionString = expressionString.Replace(",", ".");
-        for (int i = 0; i < newExpressionString.Length; i++)
+        for (var i = 0; i < newExpressionString.Length; i++)
         {
             char expressionChar = newExpressionString[i];
             if (expressionTypes.Contains(expressionChar))
             {
-                string firstNumberStr = newExpressionString[..i];
-
+                var firstNumberStr = newExpressionString[..i];
                 double helperFirstNumber = GetNumericValue(firstNumberStr);
-
-                string secondNumberStr = newExpressionString.Substring(i + 1);
+                var secondNumberStr = newExpressionString.Substring(i + 1);
 
                 double helperSecondNumber = GetNumericValue(secondNumberStr);
 
-                OperationType operationType =
-                    expressionChar == '+' ? OperationType.Addition :
-                    expressionChar == '-' ? OperationType.Subtraction :
-                    expressionChar == '*' ? OperationType.Multiplication : OperationType.Division;
+                var operation = expressionChar switch
+                {
+                    '+' => OperationType.Addition,
+                    '-' => OperationType.Subtraction,
+                    '*' => OperationType.Multiplication,
+                    '/' => OperationType.Division,
+                    _ => throw new ArgumentException($"Illegal argument: {expressionChar}."),
+                };
 
-                expressions.Add(new Expression(helperFirstNumber, helperSecondNumber, operationType));
+                expressions.Add(new Expression(helperFirstNumber, helperSecondNumber, operation));
             }
         }
     }
@@ -61,9 +63,7 @@ public class ExpressionProcessor
     public double Calculate()
     {
         double result = 0;
-
         expressions.ForEach(expression => result += expression.Process());
-
         return result;
     }
 }
