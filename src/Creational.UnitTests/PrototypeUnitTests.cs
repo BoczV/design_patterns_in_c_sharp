@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using Prototype.Entities;
+﻿using Prototype.Entities;
 
 namespace Creational.UnitTests;
 

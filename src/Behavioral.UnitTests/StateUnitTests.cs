@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using State;
+﻿using State;
 
 namespace Behavioral.UnitTests;
 
