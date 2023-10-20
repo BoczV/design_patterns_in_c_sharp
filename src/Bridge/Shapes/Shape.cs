@@ -1,4 +1,4 @@
-﻿using Bridge.Renderers;
+using Bridge.Renderers;
 
 namespace Bridge.Shapes;
 
@@ -7,7 +7,7 @@ public abstract class Shape
     protected string? name;
     private readonly IRenderer _renderer;
 
-    public Shape(IRenderer renderer)
+    protected Shape(IRenderer renderer)
     {
         _renderer = renderer;
     }

@@ -19,7 +19,7 @@ public class MyLinkedList<T>
 
         public override string? ToString()
         {
-            return Value?.ToString() ?? "";
+            return Value?.ToString() ?? string.Empty;
         }
     }
 
@@ -30,7 +30,7 @@ public class MyLinkedList<T>
 
     public T Get(int index)
     {
-        int counter = 0;
+        var counter = 0;
         var current = root;
         while (counter != index)
         {
@@ -73,7 +73,6 @@ public class MyLinkedList<T>
         {
             root = new Node(value, null!);
         }
-
     }
 
     public T Last()
@@ -83,7 +82,7 @@ public class MyLinkedList<T>
 
     public T First()
     {
-        return root!.Value ?? throw new IndexOutOfRangeException();
+        return root!.Value ?? throw new ArgumentException("Root is not initialized.");
     }
 
     private Node LastNode()
@@ -115,7 +114,8 @@ public class MyLinkedList<T>
 
     public override string? ToString()
     {
-        StringBuilder stringBuilder = new StringBuilder("[");
+        var stringBuilder = new StringBuilder();
+        stringBuilder.Append('[');
 
         var current = root;
         while (current is not null)
@@ -129,7 +129,7 @@ public class MyLinkedList<T>
             stringBuilder.Remove(stringBuilder.Length - 2, 2);
         }
 
-        stringBuilder.Append("]");
+        stringBuilder.Append(']');
         return stringBuilder.ToString();
     }
 }

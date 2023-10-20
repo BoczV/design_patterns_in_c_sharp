@@ -1,4 +1,4 @@
-﻿namespace Facade.MagicSquare.Components;
+namespace Facade.MagicSquare.Components;
 
 public static class Verifier
 {
@@ -11,6 +11,6 @@ public static class Verifier
 
         var expectedValue = array.FirstOrDefault()?.Sum() ?? 0;
 
-        return array.All(subList => subList.Sum() == expectedValue);
+        return array.TrueForAll(subList => subList.Sum() == expectedValue);
     }
 }
