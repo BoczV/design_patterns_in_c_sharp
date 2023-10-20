@@ -9,12 +9,10 @@ public class MyLinkedList<T>
     {
         public T Value;
         public Node? Next;
-        public Node Previous;
 
-        public Node(T value, Node previous)
+        public Node(T value)
         {
             Value = value;
-            Previous = previous;
         }
 
         public override string? ToString()
@@ -49,7 +47,7 @@ public class MyLinkedList<T>
             return -1;
         }
 
-        int counter = 0;
+        var counter = 0;
         var current = root;
         while (!current.Value?.Equals(value) ?? false)
         {
@@ -68,12 +66,12 @@ public class MyLinkedList<T>
         if (root is not null)
         {
             var lastElementOfList = LastNode();
-            var newNode = new Node(value, lastElementOfList);
+            var newNode = new Node(value);
             lastElementOfList.Next = newNode;
         }
         else
         {
-            root = new Node(value, null!);
+            root = new(value);
         }
     }
 
@@ -103,7 +101,6 @@ public class MyLinkedList<T>
     public int Length()
     {
         var length = 0;
-
         var current = root;
 
         while (current is not null)
