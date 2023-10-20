@@ -1,0 +1,12 @@
+<Project>
+    <PropertyGroup>
+        <DocumentationFile>$(MSBuildProjectName).xml</DocumentationFile>
+        <WarningsAsErrors>CS8600;CS8601;CS8602;CS8603;CS8604;CS8605;CS8606;CS8607;CS8625;CS8618;CS8619;CS8620;CA1821;CA1823;CA1826;CA1827;CA1828;CA1829;CA1831;CA1832;CA1833;CA1836;CA1849;CA2012;CA2016</WarningsAsErrors>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+</Project>

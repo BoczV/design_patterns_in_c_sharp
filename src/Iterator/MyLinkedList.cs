@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace Iterator;
 
@@ -42,17 +42,17 @@ public class MyLinkedList<T>
 
     public int GetIndexOf(T value)
     {
-        if (root == null)
+        if (root is null)
         {
             return -1;
         }
 
         int counter = 0;
         var current = root;
-        while (!current!.Value.Equals(value))
+        while (!current.Value?.Equals(value) ?? false)
         {
             current = current.Next;
-            if (current == null)
+            if (current is null)
             {
                 return -1;
             }
@@ -63,7 +63,7 @@ public class MyLinkedList<T>
 
     public void Add(T value)
     {
-        if (root != null)
+        if (root is not null)
         {
             var lastElementOfList = LastNode();
             var newNode = new Node(value, lastElementOfList);
@@ -83,20 +83,20 @@ public class MyLinkedList<T>
 
     public T First()
     {
-        return root.Value ?? throw new IndexOutOfRangeException();
+        return root!.Value ?? throw new IndexOutOfRangeException();
     }
 
     private Node LastNode()
     {
         var current = root;
 
-        Node previous = current;
-        while (current != null)
+        var previous = current;
+        while (current is not null)
         {
             previous = current;
             current = current.Next;
         }
-        return previous;
+        return previous!;
     }
 
     public int Length()
@@ -105,7 +105,7 @@ public class MyLinkedList<T>
 
         var current = root;
 
-        while (current != null)
+        while (current is not null)
         {
             length++;
             current = current.Next;
@@ -118,7 +118,7 @@ public class MyLinkedList<T>
         StringBuilder stringBuilder = new StringBuilder("[");
 
         var current = root;
-        while (current != null)
+        while (current is not null)
         {
             stringBuilder.Append(current.Value).Append(", ");
             current = current.Next;

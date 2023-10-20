@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+      <ProjectGuid>6E48F2AE-042B-4E3C-9597-0AB33654DC8F</ProjectGuid>
+      <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Null_Object</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
