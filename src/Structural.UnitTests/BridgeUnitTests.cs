@@ -1,7 +1,5 @@
 ﻿using Bridge.Renderers;
 using Bridge.Shapes;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace Structural.UnitTests;
 

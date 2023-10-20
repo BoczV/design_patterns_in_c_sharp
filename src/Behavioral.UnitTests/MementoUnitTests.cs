@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using Memento;
-using NUnit.Framework;
+﻿using Memento;
 
 namespace Behavioral.UnitTests;
 

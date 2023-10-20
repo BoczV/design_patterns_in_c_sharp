@@ -5,7 +5,7 @@
   <ProjectVersion>1.0</ProjectVersion>
   <Organization>boczv</Organization>
   <AdditionalSettings>
-    <Property Name="sonar.exclusions">**/*.bin,**/*.obj,**/*.dll,**/*.Program.cs</Property>
+    <Property Name="sonar.exclusions">**/*.bin,**/*.obj,**/*.dll,**/Dockerfile,**/*.Program.cs</Property>
     <Property Name="sonar.test.inclusions">**/*.Tests.cs</Property>
   </AdditionalSettings>
 </SonarQubeAnalysisConfig>
