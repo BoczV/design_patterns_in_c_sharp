@@ -1,6 +1,6 @@
-﻿namespace Prototype;
+namespace Prototype;
 
-public interface IDeepCopyable<T>
+public interface IDeepCopyable<out T>
 {
     T DeepCopy();
 }

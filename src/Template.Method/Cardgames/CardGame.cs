@@ -1,10 +1,10 @@
-﻿using Template.Method.Cardgames.Entity;
+using Template.Method.Cardgames.Entity;
 
 namespace Template.Method.Cardgames;
 
 public abstract class CardGame
 {
-    public Creature[] Creatures;
+    public Creature[] Creatures { get; set; }
 
     protected CardGame(Creature[] creatures)
     {
@@ -27,7 +27,9 @@ public abstract class CardGame
         bool secondAlive = second.Health > 0;
 
         if (firstAlive == secondAlive)
+        {
             return -1;
+        }
 
         return firstAlive ? creature1 : creature2;
     }

@@ -1,4 +1,4 @@
-﻿using Singleton.And.Factory.Entities;
+using Singleton.And.Factory.Entities;
 using Singleton.And.Factory.Entities.Singleton;
 
 namespace Singleton.And.Factory.Factory;
@@ -7,19 +7,13 @@ public static class ShapeFactory
 {
     public static IShape GetShape(ShapeType shapeType)
     {
-        IShape shape = null!;
-        switch (shapeType)
+        IShape shape = shapeType switch
         {
-            case ShapeType.Circle:
-                shape = Circle.GetInstance();
-                break;
-            case ShapeType.Square:
-                shape = new Square();
-                break;
-            case ShapeType.Triangle:
-                shape = new Triangle();
-                break;
-        }
-        return shape ?? throw new NullReferenceException();
+            ShapeType.Circle => Circle.GetInstance(),
+            ShapeType.Square => new Square(),
+            ShapeType.Triangle => new Triangle(),
+            _ => throw new ArgumentException($"Unknown shape type: {shapeType}."),
+        };
+        return shape;
     }
 }
