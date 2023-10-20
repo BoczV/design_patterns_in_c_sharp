@@ -32,11 +32,13 @@ public class MyLinkedList<T>
     {
         var counter = 0;
         var current = root;
+
         while (counter != index)
         {
-            current = current?.Next ?? throw new IndexOutOfRangeException();
+            current = current?.Next ?? throw new ArgumentException("Current node is null.");
             counter++;
         }
+
         return current!.Value;
     }
 
