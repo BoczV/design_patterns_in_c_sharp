@@ -1,7 +1,5 @@
 using Adapter;
 using Adapter.Entities;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace Structural.UnitTests;
 

@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using Iterator;
-using NUnit.Framework;
+﻿using Iterator;
 namespace Behavioral.UnitTests;
 
 [TestFixture]

@@ -1,7 +1,5 @@
 ﻿using Command;
 using Command.Commands;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace Behavioral.UnitTests;
 

@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using Interpreter;
-using NUnit.Framework;
+﻿using Interpreter;
 
 namespace Behavioral.UnitTests;
 

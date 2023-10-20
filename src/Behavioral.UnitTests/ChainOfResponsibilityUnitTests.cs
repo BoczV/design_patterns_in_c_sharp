@@ -1,6 +1,4 @@
 using Chain.Of.Responsibility.Calculator;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace Behavioral.UnitTests;
 

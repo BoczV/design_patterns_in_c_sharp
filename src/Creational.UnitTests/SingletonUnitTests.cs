@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using Singleton;
+﻿using Singleton;
 using Singleton.And.Factory.Factory;
 
 namespace Creational.UnitTests;
