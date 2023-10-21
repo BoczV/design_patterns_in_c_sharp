@@ -88,4 +88,42 @@ public class IteratorUnitTests
         last.Should().Be(thirdString);
         first.Should().Be(firstString);
     }
+
+    [Test]
+    public void TestLength()
+    {
+        // Arrange
+        var firstString = "apa";
+        var secondString = "cuka";
+        var thirdString = "funda";
+
+        _iterator.Add(firstString);
+        _iterator.Add(secondString);
+        _iterator.Add(thirdString);
+
+        // Act
+        var length = _iterator.Length();
+
+        // Assert
+        length.Should().Be(3);
+    }
+
+    [Test]
+    public void TestContains()
+    {
+        // Arrange
+        var firstString = "apa";
+        var secondString = "cuka";
+        var thirdString = "funda";
+
+        _iterator.Add(firstString);
+        _iterator.Add(secondString);
+        _iterator.Add(thirdString);
+
+        // Act
+        var contains = _iterator.Contains("cuka");
+
+        // Assert
+        contains.Should().BeTrue();
+    }
 }
