@@ -69,6 +69,16 @@ public class IteratorUnitTests
     }
 
     [Test]
+    public void TestGetIndexOf2()
+    {
+        // Arrange & Act
+        var index = _iterator.GetIndexOf("cuka");
+
+        // Assert
+        index.Should().Be(-1);
+    }
+
+    [Test]
     public void TestLastAndFirstElement()
     {
         // Arrange
