@@ -136,4 +136,14 @@ public class IteratorUnitTests
         // Assert
         contains.Should().BeTrue();
     }
+
+    [Test]
+    public void TestFirst()
+    {
+        // Arrange & Act
+        var call = () => _iterator.First();
+
+        // Assert
+        call.Should().Throw<NullReferenceException>();
+    }
 }

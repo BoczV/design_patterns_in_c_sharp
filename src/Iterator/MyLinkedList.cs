@@ -82,7 +82,7 @@ public class MyLinkedList<T>
 
     public T First()
     {
-        return root!.Value ?? throw new ArgumentException("Root is not initialized.");
+        return root!.Value;
     }
 
     private Node LastNode()
@@ -119,7 +119,8 @@ public class MyLinkedList<T>
         var current = root;
         while (current is not null)
         {
-            stringBuilder.Append(current.Value).Append(", ");
+            var currentValue = current.ToString();
+            stringBuilder.Append(currentValue).Append(", ");
             current = current.Next;
         }
 
