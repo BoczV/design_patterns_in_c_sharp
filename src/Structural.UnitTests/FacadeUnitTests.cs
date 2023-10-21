@@ -1,4 +1,4 @@
-﻿using Facade.MagicSquare;
+using Facade.MagicSquare;
 
 namespace Structural.UnitTests;
 
@@ -17,10 +17,10 @@ public class FacadeUnitTests
     public void TestIfRowsAddUpToTheSameValue()
     {
         // Arrange
-        int firstRowSum = 0;
-        int secondRowSum = 0;
-        int thirdRowSum = 0;
-        int fourthRowSum = 0;
+        var firstRowSum = 0;
+        var secondRowSum = 0;
+        var thirdRowSum = 0;
+        var fourthRowSum = 0;
 
         // Act
         _magicSquare[0].ForEach(x => firstRowSum += x);
@@ -32,7 +32,6 @@ public class FacadeUnitTests
         firstRowSum.Should().Be(secondRowSum);
         firstRowSum.Should().Be(thirdRowSum);
         firstRowSum.Should().Be(fourthRowSum);
-
     }
 
     [Test]
@@ -54,18 +53,17 @@ public class FacadeUnitTests
         firstColumnSum.Should().Be(secondColumnSum);
         firstColumnSum.Should().Be(thirdColumnSum);
         firstColumnSum.Should().Be(fourthColumnSum);
-
     }
 
     [Test]
     public void TestIfDiagonalsAddUpToTheSameValue()
     {
         // Arrange
-        int firstDiagonalSum = 0;
-        int secondDiagonalSum = 0;
+        var firstDiagonalSum = 0;
+        var secondDiagonalSum = 0;
 
         // Act
-        for (int i = 0; i < _magicSquare.Count; i++)
+        for (var i = 0; i < _magicSquare.Count; i++)
         {
             firstDiagonalSum += _magicSquare[i][i];
             secondDiagonalSum += _magicSquare[i][_magicSquare.Count - 1 - i];
@@ -73,6 +71,5 @@ public class FacadeUnitTests
 
         // Assert
         firstDiagonalSum.Should().Be(secondDiagonalSum);
-
     }
 }
